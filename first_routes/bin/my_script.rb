@@ -18,12 +18,12 @@ def update_user
     scheme: 'http',
     host: 'localhost',
     port: 3000,
-    path: '/users/1.json'
+    path: '/users/5.json'
   ).to_s
 
   begin
     puts RestClient.put(
-    url, user: {email: "Jake"})
+    url, user: {username: 'Jade', admin: true})
   rescue RestClient::Exception
     "Status Code: 422"
   end
@@ -63,4 +63,4 @@ def destroy_user
   end
 end
 
-destroy_user
+update_user

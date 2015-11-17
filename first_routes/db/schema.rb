@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116233823) do
+ActiveRecord::Schema.define(version: 20151117004908) do
 
   create_table "contact_shares", force: :cascade do |t|
     t.integer  "contact_id", null: false
@@ -40,5 +40,7 @@ ActiveRecord::Schema.define(version: 20151116233823) do
     t.datetime "updated_at", null: false
     t.string   "username",   null: false
   end
+
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
